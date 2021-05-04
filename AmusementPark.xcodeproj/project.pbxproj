@@ -12,6 +12,7 @@
 		D0002BC1263FBD5900157C81 /* MachineConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0002BC0263FBD5900157C81 /* MachineConfiguration.swift */; };
 		D0002BC6263FBD7300157C81 /* SimulatorConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0002BC5263FBD7300157C81 /* SimulatorConfiguration.swift */; };
 		D0002BCC263FBFAC00157C81 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0002BCB263FBFAC00157C81 /* Place.swift */; };
+		D0002BD7263FC61F00157C81 /* SquareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0002BD6263FC61F00157C81 /* SquareTests.swift */; };
 		D019AB2D263A84080077D939 /* AmusementParkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019AB2C263A84080077D939 /* AmusementParkApp.swift */; };
 		D019AB31263A84080077D939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D019AB30263A84080077D939 /* Assets.xcassets */; };
 		D019AB34263A84080077D939 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D019AB33263A84080077D939 /* Preview Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		D019ABA5263A86450077D939 /* SquareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019ABA4263A86450077D939 /* SquareView.swift */; };
 		D019ABAB263A881D0077D939 /* AmusementPark.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019ABAA263A881D0077D939 /* AmusementPark.swift */; };
 		D019ABB0263A88360077D939 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = D019ABAF263A88360077D939 /* Square.swift */; };
+		D030A6AF2640E00700FB726B /* MachineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D030A6AE2640E00700FB726B /* MachineTests.swift */; };
 		D0A8A493263BF35100809F99 /* SquareViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A8A492263BF35100809F99 /* SquareViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +57,7 @@
 		D0002BC0263FBD5900157C81 /* MachineConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineConfiguration.swift; sourceTree = "<group>"; };
 		D0002BC5263FBD7300157C81 /* SimulatorConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatorConfiguration.swift; sourceTree = "<group>"; };
 		D0002BCB263FBFAC00157C81 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
+		D0002BD6263FC61F00157C81 /* SquareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareTests.swift; sourceTree = "<group>"; };
 		D019AB29263A84080077D939 /* AmusementPark.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmusementPark.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D019AB2C263A84080077D939 /* AmusementParkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmusementParkApp.swift; sourceTree = "<group>"; };
 		D019AB30263A84080077D939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 		D019ABA4263A86450077D939 /* SquareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareView.swift; sourceTree = "<group>"; };
 		D019ABAA263A881D0077D939 /* AmusementPark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmusementPark.swift; sourceTree = "<group>"; };
 		D019ABAF263A88360077D939 /* Square.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Square.swift; sourceTree = "<group>"; };
+		D030A6AE2640E00700FB726B /* MachineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MachineTests.swift; sourceTree = "<group>"; };
 		D0A8A492263BF35100809F99 /* SquareViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +177,8 @@
 			children = (
 				D019AB3E263A84080077D939 /* AmusementParkTests.swift */,
 				D019AB40263A84080077D939 /* Info.plist */,
+				D0002BD6263FC61F00157C81 /* SquareTests.swift */,
+				D030A6AE2640E00700FB726B /* MachineTests.swift */,
 			);
 			path = AmusementParkTests;
 			sourceTree = "<group>";
@@ -392,6 +398,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0002BD7263FC61F00157C81 /* SquareTests.swift in Sources */,
+				D030A6AF2640E00700FB726B /* MachineTests.swift in Sources */,
 				D019AB3F263A84080077D939 /* AmusementParkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

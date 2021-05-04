@@ -8,7 +8,24 @@
 import Foundation
 import Combine
 
-final class Machine {
+protocol MachineType: Place {
+    
+    var status: AnyPublisher<Machine.Status, Never> { get set }
+    
+    var peopleOnSeat: AnyPublisher<[Person], Never> { get set }
+    
+    var peopleInLine: AnyPublisher<[Person], Never> { get set }
+    
+    var peopleExiting: AnyPublisher<[Person], Never> { get set }
+    
+    var remainingTime: AnyPublisher<Int?, Never> { get set }
+    
+    var configuration: MachineConfiguration { get }
+    
+}
+
+
+final class Machine: MachineType {
     
     enum Status: String {
         case ready
@@ -17,15 +34,15 @@ final class Machine {
     
     
     // MARK: - Interface
-    lazy var status: AnyPublisher<Status, Never> = { _status.receive(on: serialQueue).eraseToAnyPublisher() }()
+    lazy var status: AnyPublisher<Status, Never> = { _status.eraseToAnyPublisher() }()
     
-    lazy var peopleOnSeat: AnyPublisher<[Person], Never> = { _peopleOnSeat.receive(on: serialQueue).eraseToAnyPublisher() }()
+    lazy var peopleOnSeat: AnyPublisher<[Person], Never> = { _peopleOnSeat.eraseToAnyPublisher() }()
     
-    lazy var peopleInLine: AnyPublisher<[Person], Never> = { _peopleInLine.receive(on: serialQueue).eraseToAnyPublisher() }()
+    lazy var peopleInLine: AnyPublisher<[Person], Never> = { _peopleInLine.eraseToAnyPublisher() }()
     
-    lazy var peopleExiting: AnyPublisher<[Person], Never> = { _peopleExiting.receive(on: serialQueue).eraseToAnyPublisher() }()
+    lazy var peopleExiting: AnyPublisher<[Person], Never> = { _peopleExiting.eraseToAnyPublisher() }()
     
-    lazy var remainingTime: AnyPublisher<Int?, Never> = { _remainingTime.receive(on: serialQueue).eraseToAnyPublisher() }()
+    lazy var remainingTime: AnyPublisher<Int?, Never> = { _remainingTime.eraseToAnyPublisher() }()
     
     private(set) var configuration: MachineConfiguration
     
@@ -161,6 +178,7 @@ extension Machine: Place {
     func welcome(_ person: Person) {
         serialQueue.async { [weak self] in
             guard let self = self else { return }
+            print("==> 2")
             self.curate(new: person)
         }
     }

@@ -18,7 +18,7 @@ final class AmusementParkViewModel: ObservableObject {
     private var storage = Set<AnyCancellable>()
     
     init() {
-        let config = SimulatorConfiguration(accommodation: 20, numberOfMachines: 1)
+        let config = SimulatorConfiguration(accommodation: 100, numberOfMachines: 5)
         simulator = Simulator(configuration: config)
         
         park = simulator.park

@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 final class AmusementPark {
-    let square = Square()
-    var machines = [Machine]()
+    let square: SquareType
+    var machines: [MachineType]
     let configuration: AmusementParkConfiguration
     
     private var _accommodated = 0
@@ -32,7 +32,9 @@ final class AmusementPark {
     
     private let serialQueue: DispatchQueue
     
-    init(configuration: AmusementParkConfiguration, queue: DispatchQueue? = nil) {
+    init(square: SquareType = Square(), machines: [MachineType] = [Machine](), configuration: AmusementParkConfiguration, queue: DispatchQueue? = nil) {
+        self.square = square
+        self.machines = machines
         self.configuration = configuration
         
         if let queue = queue {
@@ -40,11 +42,7 @@ final class AmusementPark {
         } else {
             self.serialQueue = DispatchQueue(label: "amusement-park-queue")
         }
-        
-        configuration.machineConfigurations.forEach {
-            self.machines.append(Machine(configuration: $0))
-        }
-        
+
         machines.forEach { machine in
             machine
                 .peopleExiting

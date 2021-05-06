@@ -17,15 +17,15 @@ final class Machine {
     
     
     // MARK: - Interface
-    lazy var status: AnyPublisher<Status, Never> = { _status.receive(on: serialQueue).eraseToAnyPublisher() }()
+    lazy var status: AnyPublisher<Status, Never> = { _status.eraseToAnyPublisher() }()
     
-    lazy var peopleOnSeat: AnyPublisher<[Person], Never> = { _peopleOnSeat.receive(on: serialQueue).eraseToAnyPublisher() }()
+    lazy var peopleOnSeat: AnyPublisher<[Person], Never> = { _peopleOnSeat.eraseToAnyPublisher() }()
     
-    lazy var peopleInLine: AnyPublisher<[Person], Never> = { _peopleInLine.receive(on: serialQueue).eraseToAnyPublisher() }()
+    lazy var peopleInLine: AnyPublisher<[Person], Never> = { _peopleInLine.eraseToAnyPublisher() }()
     
-    lazy var peopleExiting: AnyPublisher<[Person], Never> = { _peopleExiting.receive(on: serialQueue).eraseToAnyPublisher() }()
+    lazy var peopleExiting: AnyPublisher<[Person], Never> = { _peopleExiting.eraseToAnyPublisher() }()
     
-    lazy var remainingTime: AnyPublisher<Int?, Never> = { _remainingTime.receive(on: serialQueue).eraseToAnyPublisher() }()
+    lazy var remainingTime: AnyPublisher<Int?, Never> = { _remainingTime.eraseToAnyPublisher() }()
     
     private(set) var configuration: MachineConfiguration
     

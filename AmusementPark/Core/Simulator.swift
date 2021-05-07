@@ -59,11 +59,18 @@ final class Simulator {
             self.serialQueue = DispatchQueue(label: "simulator-queue")
         }
         
+        // square
+        let square = Square()
+        
+        // machines
         let numberOfMachines = max(min(configuration.numberOfMachines, 5), 0)
-        let machinesToOperate = [MachineConfiguration](self.machineConfigurations[0..<numberOfMachines])
+        let machineConfigs = [MachineConfiguration](self.machineConfigurations[0..<numberOfMachines])
+        let machines = machineConfigs.map { Machine(configuration: $0) }
+        
+        // config
         let parkConfiguration = AmusementParkConfiguration(accommodation: configuration.accommodation,
-                                                           machineConfigurations: machinesToOperate)
-        park = AmusementPark(configuration: parkConfiguration)
+                                                           machineConfigurations: machineConfigs)
+        park = AmusementPark(square: square, machines: machines, configuration: parkConfiguration)
     }
     
     func simulatePeopleComing() {

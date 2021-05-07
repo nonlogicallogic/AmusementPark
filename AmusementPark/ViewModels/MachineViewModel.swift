@@ -22,7 +22,7 @@ final class MachineViewModel: ObservableObject, Identifiable {
     
     let id: String = UUID().uuidString
     
-    let machine: Machine
+    let machine: MachineType
     
     @Published var seats = [Seat]()
     @Published var peopleOnSeat = [Person]()
@@ -40,7 +40,7 @@ final class MachineViewModel: ObservableObject, Identifiable {
     
     private var storage = Set<AnyCancellable>()
     
-    init(machine: Machine) {
+    init(machine: MachineType) {
         self.machine = machine
         
         machine

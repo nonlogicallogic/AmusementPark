@@ -8,7 +8,25 @@
 import Foundation
 import Combine
 
-final class Machine {
+
+protocol MachineType: Place {
+    
+    var status: AnyPublisher<Machine.Status, Never> { get set }
+    
+    var peopleOnSeat: AnyPublisher<[Person], Never> { get set }
+    
+    var peopleInLine: AnyPublisher<[Person], Never> { get set }
+    
+    var peopleExiting: AnyPublisher<[Person], Never> { get set }
+    
+    var remainingTime: AnyPublisher<Int?, Never> { get set }
+    
+    var configuration: MachineConfiguration { get }
+    
+}
+
+
+final class Machine: MachineType {
     
     enum Status: String {
         case ready

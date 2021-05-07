@@ -34,7 +34,7 @@ class PersonTests: XCTestCase {
     func test_enter() {
         let person = Person()
         let mockPlace = MockPlace()
-        
+
         person.enter(mockPlace)
         person.enter(mockPlace)
         person.enter(mockPlace)

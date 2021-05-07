@@ -9,13 +9,13 @@ import Foundation
 import Combine
 
 final class SquareViewModel: ObservableObject {
-    let square: Square
+    let square: SquareType
     
     @Published var people = [Person]()
     
     private var storage = Set<AnyCancellable>()
     
-    init(square: Square) {
+    init(square: SquareType) {
         self.square = square
         
         square

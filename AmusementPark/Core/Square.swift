@@ -8,7 +8,13 @@
 import Foundation
 import Combine
 
-final class Square {
+protocol SquareType: Place {
+    
+    var people: AnyPublisher<[Person], Never> { get set }
+}
+
+
+final class Square: SquareType {
     
     lazy var people: AnyPublisher<[Person], Never> = { _people.eraseToAnyPublisher() }()
     

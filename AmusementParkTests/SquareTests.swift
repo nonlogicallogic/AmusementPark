@@ -50,6 +50,42 @@ class SquareTests: XCTestCase {
         wait(for: [expection], timeout: 2)
     }
     
+    func test_welcome_2() {
+        let person = Person()
+        let expection = XCTestExpectation()
+        let inversedExpection = XCTestExpectation()
+        inversedExpection.isInverted = true
+        let exp = [
+            [],
+            [person]
+        ]
+        
+        square
+            .people
+            .collect(2)
+            .sink {
+                XCTAssertEqual($0, exp)
+                expection.fulfill()
+            }
+            .store(in: &storage)
+        
+        square
+            .people
+            .collect(3)
+            .sink { _ in
+                inversedExpection.fulfill()
+            }
+            .store(in: &storage)
+        
+        // When
+        // person comes to the square
+        square.welcome(person)
+        
+        // Then
+        // the people property emitts the new comers
+        
+        wait(for: [expection, inversedExpection], timeout: 1)
+    }
 
     
     
